@@ -2,6 +2,7 @@ import './App.css'
 import {BrowserRouter} from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Nav from './Nav'
+import Rout from './Rout'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
     <BrowserRouter>    
       <Nav />
+      <Rout />
     </BrowserRouter >
     </>
   )
