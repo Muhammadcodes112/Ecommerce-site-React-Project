@@ -77,3 +77,7 @@
 .product_type .container .box .details{
     margin: auto;
 }
+.product_type .container .box .details p{
+    margin-top: 10px;
+    color: #cddbdc;
+}
