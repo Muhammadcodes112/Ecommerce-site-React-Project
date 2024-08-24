@@ -202,3 +202,64 @@
     font-style: 14px;
     color: #0989ff;
 }
+
+
+.banner{
+    padding: 20px 30px;
+    width: 100%;
+}
+.me{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.banner .container{
+    padding: 100px 60px;
+    background: #0989ff;
+    border-radius: 10px;
+    display: flex;
+
+    justify-content: space-between;
+    height: 500px;
+}
+.banner .container .detail{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.banner .container .detail h4{
+    color: #e3edf6;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.banner .container .detail h3{
+    margin-top: 10px;
+    font-size: 42px;
+    margin-right: 20%;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.banner .container .detail p{
+    margin-top: 30px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 600;
+}
+.images{
+    width: 400px;
+    height: 500px;
+    margin-top: -100px;
+}
+.banner .container .detail .link{
+    padding: 10px 30px;
+    color: #e8f4ff;
+    background: #010f1c;
+    text-decoration: none;
+    border-radius: 5px;
+    width: fit-content;
+    transition: 0.5s;
+        
+}
+.banner .container .detail .link:hover{
+    color: #010f1c;
+    background: #e8f4ff;
+}

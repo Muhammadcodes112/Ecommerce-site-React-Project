@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import galaxyFold6 from './assets/galaxy fold 6.png';
 import galaxyFold5 from './assets/galaxy fold 6.png';
 import { FiTruck } from 'react-icons/fi';
-import { BsCurrencyDollar, BsEye } from 'react-icons/bs';
+import { BsCurrencyDollar, BsEye, BsArrowRight } from 'react-icons/bs';
 import { CiPercent } from 'react-icons/ci';
 import { BiHeadphone } from 'react-icons/bi';
 // import { BsEye } from 'react-icons/bs';
@@ -114,7 +114,7 @@ const Home = () => {
                     return(
                         <div className="box" key={curElm.id}>
                             <div className="img_box">
-                                <img className='images' src={curElm.Img} alt={curElm.Title} />
+                                <img  src={curElm.Img} alt={curElm.Title} />
                                 <div className="icon">
                                     <li><AiOutlineShoppingCart /></li>
                                     <li><BsEye /></li>
@@ -131,6 +131,22 @@ const Home = () => {
                 })
             }
         </div>
+      </div>
+      <div className="banner">
+        <div className="container">
+            <div className="detail">
+            <h4>LATEST TECHNOLOGY ADDED</h4>
+            <h3>Apple Ipad 10.2 9th Gen - 2021</h3>
+           <div className="me">
+                <p>$ 986</p>
+                <Link to='/product' className='link'> Shop Now     <BsArrowRight /></Link>
+           </div>
+        </div>
+        <div className="img_box">
+            <img className='images' image src={galaxyFold5} alt="slider-img" />
+        </div>
+        </div>
+        
       </div>
     </div>
   )
