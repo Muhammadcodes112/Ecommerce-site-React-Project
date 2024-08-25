@@ -13,7 +13,6 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Homeproduct from './Homeproduct';
 import './Home.css';
 
-
 const Home = () => {
     
   return (
