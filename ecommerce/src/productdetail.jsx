@@ -55,4 +55,13 @@ const productDetail = [
         Price: '$345',
         Img: './src/img/galaxy fold 6.png'
     },
+    {
+        id:9,
+        Title: "Oraimo Space Pods Tech 2024.",
+        Cat: 'air pods',
+        Price: '$45',
+        Img: './src/img/galaxy fold 6.png'
+    },
 ]
+
+export default productDetail

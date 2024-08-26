@@ -115,7 +115,7 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTruckMoving } from "react-icons/fa";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { BsBagCheck } from "react-icons/bs";
@@ -124,7 +124,8 @@ import { CiLogin, CiLogout } from "react-icons/ci";
 import './Nav.css';
 import { useAuth0 } from "@auth0/auth0-react";
 
-const Nav = () => {
+const Nav = ({searchbtn}) => {
+  const [search, setSearch] = useState()
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
   return (
@@ -141,8 +142,8 @@ const Nav = () => {
             <img src="./img/logo.svg" alt="logo" />
           </div>
           <div className="search_box">
-            <input type="text" value='' placeholder='Search product Name' autoComplete='off' />
-            <button>Search</button>
+            <input type="text" value={search} placeholder='Search product Name....' autoComplete='off' onChange={(e) => setSearch(e.target.value)}/>
+            <button onClick={() => searchbtn (search)}>Search</button>
           </div>
           <div className="icon">
             {
