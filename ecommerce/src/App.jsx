@@ -9,6 +9,7 @@ import productDetail from './productdetail';
 
 function App() {
   //prodcut detail
+  const [close, setClose ] = useState(false)
   const [detail, setDetail] = useState([]);
   //Search Filter Function
   const [product, setProduct] = useState(productDetail)
@@ -19,11 +20,17 @@ function App() {
     })
     setProduct(change)
   }
+
+    const view = (product) => {
+      setDetail([{...product}])
+      setClose(true)
+    }
+
   return (
     <>
     <BrowserRouter>    
       <Nav searchbtn = {searchbtn}/>
-      <Rout product={product} setProduct={setProduct} detail={detail}/>
+      <Rout product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose}/>
       <Footer />
     </BrowserRouter >
     </>
