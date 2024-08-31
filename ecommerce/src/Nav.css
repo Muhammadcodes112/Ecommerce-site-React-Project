@@ -47,6 +47,7 @@
     cursor: pointer;
     background-color: #0989ff;
     color: #ecf2f7;
+    border-radius: 50px;
 }
 .main-header .container .icon {
     display: flex;
@@ -103,10 +104,16 @@
 .header .container .auth{
     margin-right: 20px;
     font-size: 22px;
+    background-color: #0989ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 7px 10px;
     cursor: pointer;
+    margin-top: -10px;
 }
 .header .container .auth button{
-    margin-right: 20px;
     font-size: 22px;
     cursor: pointer;
     outline: none;

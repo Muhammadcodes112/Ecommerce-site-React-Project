@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin-top: 70px;
+}
+.signupcontainer {
+    border-radius: 10px;
+    margin: 70px auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.signupcontainer .content{
+    margin: auto;
+    height: 400px;
+    padding: 20px;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 10px; */
+    display: flex;
+}
+.signupcontainer .content .leftbox{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+.signupcontainer .content .rightbox{
+    /* border: 1px solid blue; */
+    padding: 20px;
+    border-radius: 10px;
+}
+.signupcontainer .content .rightbox .innercontent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input{
+    padding: 5px 20px;
+    border-radius: 20px;
+    border-style: initial;
+    border: 1px solid black;
+}
+.profileimg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.line{
+    width: 100px;
+    height: 1px;
+    background-color: black;
+}
+.signupcontainer .content .rightbox button{
+    padding: 9px 10px;
+    width: 150px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: #353A5F;
+    transition: .5s ease;
+    color: aliceblue;
+    font-weight: 600;
+    margin: auto;
+}
+.signupcontainer .content .leftbox button{
+    padding: 9px 10px;
+    width: 150px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: #353A5F;
+    transition: .5s ease;
+    color: aliceblue;
+    font-weight: 600;
+}
+.signupcontainer .content .leftbox button:hover{
+    background-color: #9ebaf3;
+    color: black;
+}
+.signupcontainer .content .rightbox button:hover{
+    background-color: #9ebaf3;
+    color: black;
+}
+.socials {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: auto;
+}
+.socials li{
+    color: #353A5F;
+}
+h6{
+    margin: auto;
+}

@@ -13,7 +13,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Homeproduct from './Homeproduct';
 import './Home.css';
 
-const Home = () => {
+const Home = ({detail, view, close, setClose, addtocart}) => {
     
   return (
     <div>
@@ -115,15 +115,15 @@ const Home = () => {
                             <div className="img_box">
                                 <img  src={curElm.Img} alt={curElm.Title} />
                                 <div className="icon">
-                                    <li><AiOutlineShoppingCart /></li>
-                                    <li><BsEye /></li>
+                                    <li onClick={() => addtocart (curElm)}><AiOutlineShoppingCart /></li>
+                                    <li onClick={() => view (curElm)}><BsEye /></li>
                                     <li><AiOutlineHeart /></li>
                                 </div>
                             </div>
                             <div className="detail">
                                 <p>{curElm.Cat}</p>
                                 <h3>{curElm.Title}</h3>
-                                <h4>{curElm.Price}</h4>
+                                <h4>${curElm.Price}</h4>
                             </div>
                         </div>
                     )

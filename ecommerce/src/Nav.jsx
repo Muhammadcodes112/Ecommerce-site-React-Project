@@ -178,7 +178,7 @@ const Nav = ({searchbtn}) => {
           <div className="auth">
             {
                 isAuthenticated?
-                <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} ><CiLogout /></button>
+                <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}  className=''><CiLogout /></button>
                 :
                 <button onClick={() => loginWithRedirect()}><CiLogin /></button>
             }

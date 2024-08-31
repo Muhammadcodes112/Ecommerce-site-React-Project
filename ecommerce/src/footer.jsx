@@ -1,6 +1,5 @@
 import React from 'react'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
-import { BiLogoYoutube } from 'react-icons/bi';
 import { BsYoutube } from 'react-icons/bs';
 import { RiFacebookFill } from 'react-icons/ri';
 import './footer.css';
