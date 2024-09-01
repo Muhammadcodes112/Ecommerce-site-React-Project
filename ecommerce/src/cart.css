@@ -28,3 +28,55 @@
     background: #010f1c;
     margin-left: 80px;
 }
+.cartcontainer .contant{
+    max-width: 100%;
+    padding: 20px 30px;
+}
+.cartcontainer .contant .cart_item{
+    padding: 20px 30px;
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cartcontainer .contant{
+    max-width: 100%;
+    padding: 20px 30px;
+}
+.cartcontainer .contant .cart_item{
+    padding: 20px 30px;
+    display: flex;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.cartcontainer .contant .cart_item .img_box{
+    padding: 20px 20px;
+    background: #f1f1f1;
+}
+.cartcontainer .contant .cart_item .img_box img{
+    width: 250px;
+    height: 250px;
+}
+.cartcontainer .contant .cart_item .detail{
+    margin-left: 60px;
+    display: flex;
+    margin-top: 30px;
+    padding: 20px 30px;
+}
+.cartcontainer .contant .cart_item .detail .info h4{
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #9a9a9a;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+}
+.cartcontainer .contant .cart_item .detail .info h3{
+    margin-top: 20px;
+    color: #010f1c;
+    font-style: 22px;
+}
+
+
