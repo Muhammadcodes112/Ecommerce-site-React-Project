@@ -6,6 +6,7 @@ import Rout from './Rout';
 import Footer from './footer';
 import productDetail from './productdetail';
 
+
 function MainApp() {
   const location = useLocation();
   // Determine if the current route is either '/signin' or '/signup'

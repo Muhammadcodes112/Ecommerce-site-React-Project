@@ -43,6 +43,7 @@
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { IoRemoveOutline } from "react-icons/io5";
 import './cart.css';
 
 const Cart = ({ cart, setCart }) => {
@@ -77,6 +78,7 @@ const Cart = ({ cart, setCart }) => {
   return (
     <div>
       <div className="cartcontainer">
+      
         {cart.length === 0 ? (
           <div className="emptycart">
             <h2 className="empty">Cart is empty</h2>
@@ -86,6 +88,8 @@ const Cart = ({ cart, setCart }) => {
           </div>
         ) : (
           <div className="contant">
+            <div className="inner-content">
+            <h1 className='tag'>Shopping Cart.</h1>
             {cart.map((curElm) => (
               <div className="cart_item" key={curElm.id}>
                 <div className="img_box">
@@ -94,18 +98,14 @@ const Cart = ({ cart, setCart }) => {
                 <div className="detail">
                     <div className="info">
                         <h4>{curElm.Cat}</h4>
-                        <h3>{curElm.Title}</h3>
-                        <p>Price: ${curElm.Price}</p>
+                        <h5>{curElm.Title}</h5>
                         <div className="qty">
-                            <button className="incqty" onClick={() => incqty(curElm)}>
-                            +
-                            </button>
+                            <button className="incqty" onClick={() => incqty(curElm)}>+</button>
                             <input type="text" value={curElm.qty} readOnly />
-                            <button className="decqty" onClick={() => decqty(curElm)}>
-                            -
-                            </button>
-                        </div>    
-                        <h4>Sub Total: ${curElm.Price * curElm.qty}</h4>
+                            <button className="decqty" onClick={() => decqty(curElm)}>-</button>
+                        </div>   
+                        <p>Price: ${curElm.Price}</p> 
+                        
                     </div>
                     <div className="close">
                         <button onClick={() => removeproduct(curElm)}>
@@ -114,16 +114,51 @@ const Cart = ({ cart, setCart }) => {
                      </div>
                 </div>
               </div>
+              
             ))}
+            </div>
+
+
+
+            <div className="payment">
+                <h2>Payment Info</h2>
+                <h6>Payment Method:</h6>
+                <div className='btnbox'>
+                    <button className='btn'>Credit Card</button>
+                    <button className='btn'>Paypal</button>
+                </div>
+                <h6>Name On Card</h6>
+                <input type="text" />
+                <h6>Card Number</h6>
+                <input type="number" />
+                <div className="date">
+                    <div>
+                        <h6>Expiration Date:</h6>
+                        <input type="date" />
+                    </div>
+                    <div>
+                        <h6>CVV:</h6>
+                        <input type="number" />
+                    </div>
+                </div>
+                
+                {/* {cart.map((curElm) => (
+                    <h4 className='subtotal'>Sub Total: ${curElm.Price * curElm.qty}</h4>
+                ))} */}
+
+                <div className="totalcheckoutbutton">
+                    {cart.length > 0 && (
+                        <>
+                            <h5 className="totalprice">Total: ${Totalprice.toFixed(2)}</h5>
+                            <button className="checkout" >Checkout</button>
+                        </>
+                    )}
+                </div>
+            </div>
           </div>
         )}
 
-        {cart.length > 0 && (
-          <>
-            <h2 className="totalprice">Total Price: ${Totalprice.toFixed(2)}</h2>
-            <button className="checkout">Checkout</button>
-          </>
-        )}
+       
       </div>
     </div>
   );

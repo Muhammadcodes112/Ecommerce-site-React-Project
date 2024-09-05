@@ -72,7 +72,7 @@
     border-bottom: 1px solid #e2e0e0 ;
 }
 .products .container .productbox .contant .box .img_box img{
-    width: 300px;
+    width: 200px;
     height: 250px;
     margin-right: 50px;
 }
@@ -160,6 +160,11 @@
     width: 300px;
     height: 300px;
     background: #f1f1f1;
+}
+.products h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .product_detail .container .productbox .img-box img{
     width: 200px;

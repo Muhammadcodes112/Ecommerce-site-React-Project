@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { FaArrowRightLong } from "react-icons/fa6";
 import galaxyFold6 from './assets/galaxy fold 6.png';
 import galaxyFold5 from './assets/galaxy fold 6.png';
+import appleipad from './img/appleipad.png';
+
+
 import { FiTruck } from 'react-icons/fi';
 import { BsCurrencyDollar, BsEye, BsArrowRight } from 'react-icons/bs';
 import { CiPercent } from 'react-icons/ci';
@@ -142,7 +145,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
            </div>
         </div>
         <div className="img_box">
-            <img className='images' image src={galaxyFold5} alt="slider-img" />
+            <img className='images' image src={appleipad} alt="slider-img" />
         </div>
         </div>
         

@@ -202,7 +202,7 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
       )}
 
       <div className="products">
-        <h2># Products</h2> 
+        <h2> Products</h2> 
         <p>Home . Products</p>
         <div className="container">
           <div className="filter">

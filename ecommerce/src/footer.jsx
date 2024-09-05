@@ -3,6 +3,7 @@ import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
 import { BsYoutube } from 'react-icons/bs';
 import { RiFacebookFill } from 'react-icons/ri';
 import './footer.css';
+import logo from './img/logo.png';
 
 const footer = () => {
   return (
@@ -11,7 +12,8 @@ const footer = () => {
         <div className="container">
             <div className="about">
                 <div className="logo">
-                    <img src="./src.img/logo.png" alt="logo" />
+                <img className='logoimage' src={logo} alt="logo" />
+                <p>Phantom Gadgets</p>
                 </div>
                 <div className="detail">
                     <p>We are a team of designers and developers that create high quality</p>

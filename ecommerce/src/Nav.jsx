@@ -123,10 +123,36 @@ import { Link } from 'react-router-dom';
 import { CiLogin, CiLogout } from "react-icons/ci";
 import './Nav.css';
 import { useAuth0 } from "@auth0/auth0-react";
+import { auth, db } from './firebase/firebase'; 
+import { IoSearch } from "react-icons/io5";
+import { doc, getDoc } from 'firebase/firestore';
+import { PiShoppingCartFill } from "react-icons/pi";
+import logo from './img/logo.png';
+// import { useAuth } from './context/ac';
+// import { AuthProvider, useAuth } from './context/Ac';
 
 const Nav = ({searchbtn}) => {
+  
   const [search, setSearch] = useState()
-  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  // const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  const [userDetails, setUserDetails] = useState(null); 
+  // const {currentUser }  = useAuth();
+  const fetchUserData = async () => { 
+    auth.onAuthStateChanged(async (user) => { 
+      console.log(user) 
+      const docRef = doc(db, "Users", user.uid); 
+      const docSnap = await getDoc(docRef); 
+      if (docSnap.exists()) { 
+        setUserDetails(docSnap.data()) 
+        console.log(docSnap.data()) 
+      } else { 
+        console.log("user is not logged in ") 
+      } 
+    }); 
+  }; 
+  useState(() => { 
+    fetchUserData() 
+  }, [])
 
   return (
     <>
@@ -139,27 +165,18 @@ const Nav = ({searchbtn}) => {
       <div className='main-header'>
         <div className="container">
           <div className="logo">
-            <img src="./img/logo.svg" alt="logo" />
+            <img className='logoimage' src={logo} alt="logo" />
+            <p>Phantom Gadgets</p>
           </div>
           <div className="search_box">
             <input type="text" value={search} placeholder='Search product Name....' autoComplete='off' onChange={(e) => setSearch(e.target.value)}/>
-            <button onClick={() => searchbtn (search)}>Search</button>
+            <button onClick={() => searchbtn (search)}><IoSearch /></button>
           </div>
           <div className="icon">
-            {
-                isAuthenticated && (
-                    <div className="account">
-                    <div className="user_icon">
-                        <AiOutlineUser />
-                    </div>
-                    <p>Hello,{user.name}</p>
-                    </div>
-                )
-            }
+            
            
             <div className="second_icon">
-              <Link to="/" className='link'><AiOutlineHeart /></Link>
-              <Link to="/cart" className='link'><BsBagCheck /></Link>
+              <Link to="/cart" className='link'><PiShoppingCartFill /></Link>
             </div>
           </div>
         </div>
@@ -167,24 +184,40 @@ const Nav = ({searchbtn}) => {
 
       <div className='header'>
         <div className="container">
+        <img className='logoimage' src={logo} alt="logo" />
           <div className="nav">
             <ul>
               <li><Link to='/' className='link'>Home</Link></li>
               <li><Link to='/product' className='link'>Product</Link></li>
               <li><Link to='/about' className='link'>About</Link></li>
-              <li><Link to='/contact' className='link'>Contact</Link></li>
+              <li><Link to='/cont' className='link'>Contact</Link></li>
             </ul>
           </div>
-          <div className="auth">
-            {
-                isAuthenticated?
-                <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}  className=''><CiLogout /></button>
-                :
-                <button onClick={() => loginWithRedirect()}><CiLogin /></button>
+          <div className="userne">
+            {userDetails ? ( 
+ 
+            <h3> 
+              <h6>{userDetails.Name}</h6> 
+
+            </h3> 
+            ) : ( 
+            <p> {/* Loading ....... */} </p> 
+            ) 
             }
-            
-            
+            <div className="auth">
+            <Link to="/Profile"><button><CiLogin /></button> </Link>   
+
+             {/* {currentUser ?  
+            <Link to="/Profile"><button><CiLogin /></button> </Link> 
+               
+            : 
+              <li><Link to='/signin' className='link'>SignIn</Link></li> 
+             
+            }  
+             */}
           </div>
+          </div>
+
         </div>
       </div>
     </>
